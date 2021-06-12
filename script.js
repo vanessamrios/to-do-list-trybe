@@ -5,17 +5,19 @@ function createTask() {
         const inputValue = document.getElementById('texto-tarefa').value;
         const list = document.getElementById('lista-tarefas');
         let input = document.getElementById('texto-tarefa');
-        let tasks = document.createElement('li');
-        list.appendChild(tasks);
-        tasks.innerText = inputValue;
+        let task = document.createElement('li');
+        list.appendChild(task);
+        task.innerText = inputValue;
         input.value = '';
-        tasks.addEventListener('click', mudaCor)
-        function mudaCor () {
-            tasks=document.getElementsByTagName('li');
-            for (let task of tasks){
-                task.style.backgroundColor="rgb(128, 128, 128)"
+        task.addEventListener('click', mudaCor)
+        function mudaCor(event) {
+            const tasks = document.getElementsByTagName('li');
+            for(let task of tasks){
+                task.style.backgroundColor=null;
             }
+            event.target.style.backgroundColor='rgb(128, 128, 128)';
         }
+    }
 }
-}
+
 createTask();       
