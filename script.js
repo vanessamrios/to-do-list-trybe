@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 function createTask() {
   const buttonCreateTask = document.getElementById('criar-tarefa');
   buttonCreateTask.addEventListener('click', NewTask);
@@ -25,12 +26,12 @@ function mudaCor(event) {
 
 createTask();
 
-function riscaTask(event){
-    if (event.target.classList.contains('completed')){
-        event.target.classList.remove('completed');
-        event.target.style.textDecoration= null;
-    } else {
-        event.target.classList.add('completed');
-        event.target.style.textDecoration='line-through';
-    }
+function riscaTask(event) {
+  if (event.target.classList.contains('completed')) {
+    event.target.classList.remove('completed');
+    event.target.style.textDecoration = null;
+  } else {
+    event.target.classList.add('completed');
+    event.target.style.textDecoration = 'line-through';
+  }
 }
